@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Charger les variables d'environnement à partir du fichier .env
-source .extract.env
+source ../config/extract.env
 
 # Exécuter le script Python et capturer la sortie dans des variables
-credentials=$(python extract_server_ldap_vault.py)
+credentials=$(python ../config/extract_server_ldap_vault.py)
 
 # Extraire le login et le mot de passe à partir de la sortie capturée
 ldap_username=$(echo "$credentials" | awk '{print $1}')
